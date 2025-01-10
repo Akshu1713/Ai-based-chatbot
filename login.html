@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('chatbot.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form {
+            margin-top: 20px;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Chatbot Login</h2>
+        <form class="login-form">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+        </form>
+    </div>
+    <script>
+        // Add event listener to login button
+        document.getElementById('login-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Get username and password values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            // Validate username and password
+            if (username === 'admin' && password === 'password') {
+                // Login successful, redirect to chatbot page
+                window.location.href = 'index.html';
+            } else {
+                // Login failed, display error message
+                alert('Invalid username or password');
+            }
+        });
+    </script>
+</body>
+</html>
